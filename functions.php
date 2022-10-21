@@ -35,7 +35,7 @@ class InitYanaBlock {
     add_action('init', [$this, 'wp_yana_custom_block_init']);
   }
   function wp_yana_custom_block_init() {
-    register_block_type( __DIR__ . "/build/{$this->block_name}" );
+    register_block_type( __DIR__ . "/build/blocks/{$this->block_name}" );
   }
 }
 
