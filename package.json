@@ -16,6 +16,12 @@
     "url": "https://github.com/wisethee/wp-yana/issues"
   },
   "homepage": "https://github.com/wisethee/wp-yana#readme",
+  "dependencies": {
+    "@wordpress/block-editor": "^10.3.0"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^24.4.0"
+  },
   "devDependencies": {
     "@wordpress/scripts": "^24.4.0"
   }

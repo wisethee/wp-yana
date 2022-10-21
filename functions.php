@@ -29,7 +29,15 @@ endif;
 add_action( 'wp_enqueue_scripts', 'wp_yana_styles' );
 
 
-function wp_yana_custom_block_init() {
-	register_block_type( __DIR__ . '/build/custom-block' );
+class InitYanaBlock {
+  function __construct($block_name) {
+    $this->block_name = $block_name;
+    add_action('init', [$this, 'wp_yana_custom_block_init']);
+  }
+  function wp_yana_custom_block_init() {
+    register_block_type( __DIR__ . "/build/{$this->block_name}" );
+  }
 }
-add_action( 'init', 'wp_yana_custom_block_init' );
+
+new InitYanaBlock('custom-block');
+
