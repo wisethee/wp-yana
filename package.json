@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "wordpress block theme boilerplate",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
   },
   "repository": {
     "type": "git",
@@ -14,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/wisethee/wp-yana/issues"
   },
-  "homepage": "https://github.com/wisethee/wp-yana#readme"
+  "homepage": "https://github.com/wisethee/wp-yana#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^24.4.0"
+  }
 }
