@@ -28,14 +28,7 @@ if ( ! function_exists( 'wp_yana_styles' ) ) :
 endif;
 add_action( 'wp_enqueue_scripts', 'wp_yana_styles' );
 
-
-// function wp_yana_custom_block_init() {
-// 	register_block_type( __DIR__ . '/build/custom-block' );
-// }
-// add_action( 'init', 'wp_yana_custom_block_init' );
-
-
-class InitCustomBlock {
+class InitYanaBlock {
   function __construct($block_name) {
     $this->block_name = $block_name;
     add_action('init', [$this, 'wp_yana_custom_block_init']);
@@ -45,4 +38,4 @@ class InitCustomBlock {
   }
 }
 
-new InitCustomBlock('custom-block');
+new InitYanaBlock('custom-block');
