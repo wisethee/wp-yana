@@ -5,3 +5,40 @@
  * Version: 0.0.1
  * License: MIT
 */
+
+
+/*
+ * Font smoothing.
+ * This is a niche setting that will not be available via Global Styles.
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
+:root {
+  --font-size-label-small: clamp(0.75rem, 0.6397rem + 0.2941vw, 0.875rem);
+  --font-size-label-medium: clamp(0.875rem, 0.7647rem + 0.2941vw, 1rem);
+  --font-size-label-large: clamp(1rem, 0.8897rem + 0.2941vw, 1.125rem);
+
+  --font-size-body-small: clamp(0.875rem, 0.7647rem + 0.2941vw, 1rem);
+  --font-size-body-medium: clamp(1rem, 0.8897rem + 0.2941vw, 1.125rem);
+  --font-size-body-large: clamp(1.125rem, 1.0147rem + 0.2941vw, 1.25rem);
+
+  --font-size-title-small: clamp(1.125rem, 1.0147rem + 0.2941vw, 1.25rem);
+  --font-size-title-medium: clamp(1.25rem, 1.0294rem + 0.5882vw, 1.5rem);
+  --font-size-title-large: clamp(1.5rem, 1.0588rem + 1.1765vw, 2rem);
+
+  --font-size-headline-small: clamp(2rem, 1.7794rem + 0.5882vw, 2.25rem);
+  --font-size-headline-medium: clamp(2.25rem, 2.0294rem + 0.5882vw, 2.5rem);
+  --font-size-headline-large: clamp(2.5rem, 2.0588rem + 1.1765vw, 3rem);
+
+  --font-size-display-small: clamp(3rem, 2.3382rem + 1.7647vw, 3.75rem);
+  --font-size-display-medium: clamp(3.75rem, 3.0882rem + 1.7647vw, 4.5rem);
+  --font-size-display-large: clamp(4.5rem, 3.1765rem + 3.5294vw, 6rem);
+
+  --content-size: 906px;
+  --content-wide-size: 1280px;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}

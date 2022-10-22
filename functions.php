@@ -29,7 +29,7 @@ endif;
 add_action( 'wp_enqueue_scripts', 'wp_yana_styles' );
 
 
-class InitYanaBlock {
+class RegisterBlock {
   function __construct($block_name) {
     $this->block_name = $block_name;
     add_action('init', [$this, 'wp_yana_custom_block_init']);
@@ -39,5 +39,5 @@ class InitYanaBlock {
   }
 }
 
-new InitYanaBlock('custom-block');
+new RegisterBlock('custom-block');
 
