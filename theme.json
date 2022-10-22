@@ -187,6 +187,14 @@
     "spacing": {
       "units": ["%", "px", "em", "rem", "vh", "vw"],
       "blockGap": true
+    },
+    "custom": {
+      "spacing": {
+        "small": "max(1.25rem, 2vw)",
+        "medium": "clamp(2rem, 8vw, 4rem)",
+        "large": "clamp(4rem, 10vw, 8rem)",
+        "outer": "var(--wp--custom--spacing--small, 1.25rem)"
+      }
     }
   },
   "styles": {
