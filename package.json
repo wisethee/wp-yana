@@ -3,8 +3,12 @@
   "version": "0.0.1",
   "description": "wordpress block theme boilerplate",
   "scripts": {
-    "start": "wp-scripts start",
-    "build": "wp-scripts build"
+    "start:wp": "wp-scripts start",
+    "start:style": "sass -w --style=compressed sass/main.scss:assets/css/main.css --no-source-map",
+    "build:wp": "wp-scripts build",
+    "build:style": "sass -w --style=compressed sass/main.scss:assets/css/main.css --no-source-map",
+    "start": "npm run start:wp & npm run start:style",
+    "build": "npm run build:wp & npm run build:style"
   },
   "repository": {
     "type": "git",
@@ -12,16 +16,9 @@
   },
   "author": "Marius P",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/wisethee/wp-yana/issues"
-  },
   "homepage": "https://github.com/wisethee/wp-yana#readme",
-  "dependencies": {
-    "@wordpress/block-editor": "^10.3.0",
-    "@wordpress/blocks": "^11.19.0",
-    "@wordpress/i18n": "^4.20.0"
-  },
   "devDependencies": {
-    "@wordpress/scripts": "^24.4.0"
+    "@wordpress/scripts": "^24.4.0",
+    "sass": "^1.55.0"
   }
 }

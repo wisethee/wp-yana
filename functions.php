@@ -1,48 +1,46 @@
 <?php
 
-if ( ! function_exists( 'wp_yana_support' ) ) :
-	// Sets up theme defaults and registers support for various WordPress features.
-  function wp_yana_setup() {
-    // Add support for block styles.
+// Sets up theme defaults and registers support for various WordPress features.
+if ( ! function_exists( 'yana_support' ) ) :
+  function yana_support() {
     add_theme_support( 'wp-block-styles' );
-
     add_editor_style('style.css');
 
     // Register nav menus.
     register_nav_menus(array('primary' => __('Primary Navigation', '')));
   }
 endif;
-add_action('after_setup_theme', 'wp_yana_setup');
+add_action('after_setup_theme', 'yana_support');
 
 
-if ( ! function_exists( 'wp_yana_styles' ) ) :
-  // Enqueue styles.
-  function wp_yana_styles() {
+// Add theme stylesheet.
+if ( ! function_exists( 'yana_styles' ) ) :
+  function yana_styles() {
     $theme_version = wp_get_theme()->get( 'Version' );
 		$version_string = is_string( $theme_version ) ? $theme_version : false;
 
     wp_register_style(
-      'wp_yana_style',
+      'yana_style',
       get_template_directory_uri() . '/style.css',
       array(),
 			$version_string);
 
-    // Enqueue theme stylesheet.
-		wp_enqueue_style( 'wp_yana_style' );
+		wp_enqueue_style( 'yana_style' );
   }
 endif;
-add_action( 'wp_enqueue_scripts', 'wp_yana_styles' );
+add_action( 'wp_enqueue_scripts', 'yana_styles' );
 
 
-class RegisterBlock {
-  function __construct($block_name) {
-    $this->block_name = $block_name;
-    add_action('init', [$this, 'wp_yana_custom_block_init']);
+// Add theme main stylesheet.
+if ( ! function_exists( 'yana_main_styles' ) ) :
+  function yana_main_styles() {
+    $theme_version = wp_get_theme()->get( 'Version' );
+		$version_string = is_string( $theme_version ) ? $theme_version : false;
+
+		wp_enqueue_style('yana_main_style',
+      get_template_directory_uri() . '/assets/css/style.css',
+      array(),
+			$version_string);
   }
-  function wp_yana_custom_block_init() {
-    register_block_type( __DIR__ . "/build/blocks/{$this->block_name}" );
-  }
-}
-
-new RegisterBlock('custom-block');
-
+endif;
+add_action( 'wp_enqueue_scripts', 'yana_main_styles' );
