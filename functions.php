@@ -38,7 +38,7 @@ if ( ! function_exists( 'yana_main_styles' ) ) :
 		$version_string = is_string( $theme_version ) ? $theme_version : false;
 
 		wp_enqueue_style('yana_main_style',
-      get_template_directory_uri() . '/assets/css/style.css',
+      get_template_directory_uri() . '/assets/css/main.css',
       array(),
 			$version_string);
   }
