@@ -2,12 +2,17 @@
 
 if ( ! function_exists( 'wp_yana_support' ) ) :
 	// Sets up theme defaults and registers support for various WordPress features.
-  function wp_yana_support() {
+  function wp_yana_setup() {
+    // Add support for block styles.
     add_theme_support( 'wp-block-styles' );
+
     add_editor_style('style.css');
+
+    // Register nav menus.
+    register_nav_menus(array('primary' => __('Primary Navigation', '')));
   }
 endif;
-add_action('after_setup_theme', 'wp_yana_support');
+add_action('after_setup_theme', 'wp_yana_setup');
 
 
 if ( ! function_exists( 'wp_yana_styles' ) ) :
