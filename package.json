@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/wisethee/wp-yana#readme",
   "dependencies": {
-    "@wordpress/block-editor": "^10.3.0"
+    "@wordpress/block-editor": "^10.3.0",
+    "@wordpress/blocks": "^11.19.0",
+    "@wordpress/i18n": "^4.20.0"
   },
   "devDependencies": {
     "@wordpress/scripts": "^24.4.0"

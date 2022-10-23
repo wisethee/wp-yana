@@ -13,6 +13,7 @@
       "defaultDuotone": false,
       "defaultGradients": false,
       "defaultPalette": false,
+      "customGradient": false,
       "palette": [
         {
           "name": "Primary",
